@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="fr-BE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Maison A — L'Intense</title>
+<meta name="description" content="Pâtes à tartiner et confitures Maison A. Peu d'ingrédients, choisis avec soin. Coffrets à composer, livraison en Belgique ou retrait.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Maquette de démonstration — future boutique Shopify de Maison A.
+   Palette tirée des étiquettes réelles : vert pistache, rose et rouge fraise, papier. */
+:root{
+  --paper:#F6F3EC; --white:#FFFFFF; --ink:#1D1A16; --mute:#6F675D; --rule:#D8D0C3;
+  --pistache:#A3AD72; --pistache-pale:#DCE0C4; --pistache-deep:#4F5A2C;
+  --rose:#EDCDC6; --fraise:#B5463B;
+  --display:"Libre Caslon Display",Georgia,serif; --serif:"Libre Caslon Text",Georgia,serif; --sans:"Work Sans",system-ui,sans-serif;
+  --max:1320px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.02;letter-spacing:-.01em}
+h2{font-size:clamp(38px,5vw,68px)}
+.note{font-family:var(--serif);font-style:italic;color:var(--mute);font-size:14px}
+.btn{display:inline-block;background:var(--ink);color:var(--paper);padding:15px 26px;font-size:14px;font-weight:500;transition:background .2s}
+.btn:hover{background:var(--pistache-deep)}
+.btn:disabled{opacity:.35;pointer-events:none}
+.link{border-bottom:1px solid currentColor;padding-bottom:2px;font-weight:500;font-size:14px;transition:color .2s}
+.link:hover{color:var(--fraise)}
+.rule{border:0;border-top:1px solid var(--rule)}
+
+/* Haut de page */
+.topline{border-bottom:1px solid var(--rule);font-size:12.5px;color:var(--mute)}
+.topline .wrap{display:flex;justify-content:space-between;padding-top:9px;padding-bottom:9px;gap:16px}
+header{position:sticky;top:0;z-index:40;background:var(--paper);border-bottom:1px solid var(--rule)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:24px}
+.logo img{height:46px;width:auto}
+.menu{display:flex;gap:34px;font-size:14px}
+.menu a:hover{color:var(--fraise)}
+.tools{display:flex;gap:26px;font-size:14px}
+.tools button:hover{color:var(--fraise)}
+.burger{display:none}
+
+/* Hero */
+.hero{padding:56px 0 72px}
+.hero-grid{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:end}
+.hero h1{font-size:clamp(56px,8.4vw,128px)}
+.hero-txt p{font-family:var(--serif);font-size:19px;line-height:1.55;max-width:400px;margin:30px 0 34px}
+.hero-actions{display:flex;gap:28px;align-items:center;flex-wrap:wrap}
+.hero-fig{position:relative}
+.hero-fig img{width:100%;aspect-ratio:5/4;object-fit:cover}
+.hero-fig .inset{position:absolute;left:-64px;bottom:-40px;width:34%;aspect-ratio:4/5;border:10px solid var(--paper)}
+figcaption{display:flex;justify-content:flex-end;margin-top:12px}
+
+/* Bande pistache — motif repris de l'étiquette */
+.band{background-color:var(--pistache-pale);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cg fill='%23A3AD72' fill-opacity='.55'%3E%3Cellipse cx='20' cy='24' rx='9' ry='5' transform='rotate(-30 20 24)'/%3E%3Cellipse cx='78' cy='14' rx='9' ry='5' transform='rotate(40 78 14)'/%3E%3Cellipse cx='52' cy='62' rx='9' ry='5' transform='rotate(10 52 62)'/%3E%3Cellipse cx='102' cy='78' rx='9' ry='5' transform='rotate(-60 102 78)'/%3E%3Cellipse cx='18' cy='96' rx='9' ry='5' transform='rotate(70 18 96)'/%3E%3Cellipse cx='70' cy='106' rx='9' ry='5' transform='rotate(-15 70 106)'/%3E%3C/g%3E%3Cg fill='%23B5463B' fill-opacity='.35'%3E%3Ccircle cx='46' cy='30' r='2.4'/%3E%3Ccircle cx='96' cy='46' r='2.4'/%3E%3Ccircle cx='34' cy='74' r='2.4'/%3E%3C/g%3E%3C/svg%3E")}
+.band .wrap{padding-top:64px;padding-bottom:64px}
+.band-card{background:var(--paper);max-width:760px;margin:0 auto;padding:46px 52px;text-align:center;border:1px solid var(--pistache)}
+.band-card p{font-family:var(--display);font-size:clamp(28px,3.4vw,44px);line-height:1.15}
+.band-card small{display:block;margin-top:16px;font-size:13px;color:var(--mute)}
+
+/* Sections */
+section.block{padding:110px 0}
+.sec-head{display:grid;grid-template-columns:5fr 7fr;gap:56px;margin-bottom:54px;align-items:end}
+.sec-head p{font-family:var(--serif);font-size:17px;color:var(--mute);max-width:520px}
+
+/* La carte */
+.carte{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;border-top:1px solid var(--ink);padding-top:34px}
+.carte h3{font-size:26px;margin-bottom:6px}
+.carte .note{display:block;margin-bottom:22px}
+.carte ul{list-style:none}
+.carte li button{display:flex;width:100%;align-items:baseline;gap:8px;padding:11px 0;text-align:left;font-family:var(--serif);font-size:17px}
+.carte li button::after{content:"";order:1;flex:1;border-bottom:1px dotted var(--mute);transform:translateY(-4px)}
+.carte li button span:last-child{order:2;font-family:var(--sans);font-size:14px}
+.carte li button:hover{color:var(--fraise)}
+.peek{position:fixed;width:220px;aspect-ratio:1;object-fit:cover;pointer-events:none;z-index:30;opacity:0;transition:opacity .15s;box-shadow:0 18px 40px -18px rgba(0,0,0,.45)}
+.peek.on{opacity:1}
+
+/* Boutique */
+.tabs{display:flex;gap:28px;font-size:14px;margin-bottom:34px;border-bottom:1px solid var(--rule)}
+.tab{padding:0 0 14px;color:var(--mute);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tab.active{color:var(--ink);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:48px 24px}
+.card.hide{display:none}
+.card-media{position:relative;aspect-ratio:4/5;background:var(--white);overflow:hidden;cursor:pointer}
+.card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .5s}
+.card-media img.alt{opacity:0}
+.card:hover .card-media img.alt{opacity:1}
+.tag{position:absolute;top:0;left:0;z-index:2;background:var(--ink);color:var(--paper);font-size:11.5px;padding:5px 10px}
+.card-info{display:flex;justify-content:space-between;gap:12px;padding-top:14px}
+.card-info h3{font-family:var(--serif);font-size:17px;line-height:1.3}
+.card-info small{display:block;color:var(--mute);font-size:13px;margin-top:2px}
+.card-info .price{font-size:14px;white-space:nowrap}
+.card .add{margin-top:12px;font-size:13.5px}
+
+/* Produit signature */
+.signature{display:grid;grid-template-columns:1fr 1fr;background:var(--white)}
+.signature img{width:100%;height:100%;object-fit:cover;min-height:560px}
+.sig-txt{padding:80px 72px;display:flex;flex-direction:column;justify-content:center}
+.sig-txt .note{margin-bottom:18px}
+.sig-txt h2{margin-bottom:24px}
+.sig-txt p{font-family:var(--serif);font-size:17px;line-height:1.65;margin-bottom:28px;max-width:500px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-bottom:34px}
+.facts div{padding:16px 0;font-size:13px;color:var(--mute)}
+.facts div+div{padding-left:18px;border-left:1px solid var(--rule)}
+.facts b{display:block;font-family:var(--display);font-weight:400;font-size:26px;color:var(--ink)}
+.buy{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.buy .price{font-family:var(--display);font-size:30px}
+
+/* Coffret */
+.builder{background:var(--rose)}
+.builder-grid{display:grid;grid-template-columns:4fr 7fr;gap:72px}
+.builder ol{list-style:none;margin-top:34px;counter-reset:s}
+.builder ol li{counter-increment:s;padding:16px 0;border-top:1px solid rgba(29,26,22,.2);font-family:var(--serif);font-size:16px;display:flex;gap:16px}
+.builder ol li::before{content:counter(s);font-family:var(--display);font-size:22px;width:22px;line-height:1.1}
+.panel{background:var(--paper);padding:34px}
+.sizes{display:flex;border:1px solid var(--ink);margin-bottom:26px}
+.size{flex:1;padding:13px;font-size:14px}
+.size+.size{border-left:1px solid var(--ink)}
+.size.active{background:var(--ink);color:var(--paper)}
+.box{display:grid;border:6px solid #C9A27E;background:#C9A27E;gap:6px;margin-bottom:26px}
+.slot{aspect-ratio:1;background:#F1E6D6;display:grid;place-items:center;font-family:var(--serif);font-style:italic;font-size:12.5px;color:#A3876A;overflow:hidden}
+.slot img{width:100%;height:100%;object-fit:cover}
+.slot.filled{cursor:pointer}
+.picks{list-style:none;border-top:1px solid var(--rule)}
+.picks li{display:flex;align-items:center;gap:14px;padding:9px 0;border-bottom:1px solid var(--rule)}
+.picks img{width:42px;height:42px;object-fit:cover}
+.picks span{flex:1;font-family:var(--serif);font-size:15px}
+.picks em{font-style:normal;font-size:13.5px;color:var(--mute);width:62px;text-align:right}
+.picks button{width:32px;height:32px;border:1px solid var(--ink);font-size:17px;line-height:1}
+.picks button:hover{background:var(--ink);color:var(--paper)}
+.picks button:disabled{opacity:.25;pointer-events:none}
+.panel-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:24px}
+.panel-foot b{font-family:var(--display);font-weight:400;font-size:30px;display:block}
+
+/* Histoire */
+.story{display:grid;grid-template-columns:5fr 7fr;gap:56px}
+.story blockquote{font-family:var(--display);font-size:clamp(30px,3.6vw,48px);line-height:1.12}
+.story-cols{columns:2;column-gap:40px;font-family:var(--serif);font-size:16.5px;line-height:1.7}
+.story-cols p{margin-bottom:16px;break-inside:avoid}
+.story-img{margin-top:44px;display:grid;grid-template-columns:2fr 1fr;gap:16px}
+.story-img img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/2}
+.story-img img+img{aspect-ratio:auto}
+
+/* Événements */
+.events{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.event img{width:100%;aspect-ratio:16/10;object-fit:cover;margin-bottom:20px}
+.event h3{font-size:32px;margin-bottom:8px}
+.event p{font-family:var(--serif);color:var(--mute);margin-bottom:16px;max-width:460px}
+
+/* Engagements + newsletter */
+.promises{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink);margin-top:90px}
+.promises div{padding:26px 24px 0 0;font-size:14px;color:var(--mute)}
+.promises b{display:block;color:var(--ink);font-weight:500;margin-bottom:4px}
+.news{display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:end;padding:90px 0;border-top:1px solid var(--rule)}
+.news form{display:flex;border-bottom:1px solid var(--ink)}
+.news input{flex:1;min-width:0;border:0;outline:0;background:none;font:inherit;font-family:var(--serif);font-size:20px;padding:12px 0}
+.news button{font-weight:500;font-size:14px;padding-left:16px}
+
+/* Pied de page */
+footer{border-top:1px solid var(--ink);padding:64px 0 30px;font-size:14px}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.foot img{height:70px;width:auto;margin-bottom:16px}
+.foot h4{font-weight:500;font-size:13px;margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:8px;color:var(--mute)}
+.foot a:hover{color:var(--fraise)}
+.foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;padding-top:20px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--mute)}
+
+/* Panier */
+.overlay{position:fixed;inset:0;background:rgba(29,26,22,.4);z-index:60;opacity:0;pointer-events:none;transition:opacity .3s}
+.overlay.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(430px,100%);background:var(--paper);z-index:70;transform:translateX(100%);transition:transform .35s ease;display:flex;flex-direction:column;border-left:1px solid var(--ink)}
+.drawer.on{transform:none}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid var(--rule)}
+.drawer-head h3{font-size:28px}
+.ship{padding:16px 26px;font-size:13.5px;border-bottom:1px solid var(--rule)}
+.bar{height:3px;background:var(--rule);margin-top:10px}
+.bar i{display:block;height:100%;background:var(--pistache-deep);transition:width .4s}
+.lines{flex:1;overflow:auto;padding:0 26px}
+.line{display:grid;grid-template-columns:70px 1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--rule)}
+.line img{width:70px;height:84px;object-fit:cover;background:var(--white)}
+.line h5{font-family:var(--serif);font-weight:400;font-size:16px;line-height:1.3}
+.line small{color:var(--mute);font-size:12.5px}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--rule);margin-top:8px}
+.qty button{width:30px;height:30px}
+.qty span{min-width:22px;text-align:center;font-size:13px}
+.empty{padding:70px 0;text-align:center;font-family:var(--serif);color:var(--mute)}
+.empty b{display:block;font-family:var(--display);font-weight:400;font-size:26px;color:var(--ink);margin-bottom:6px}
+.drawer-foot{padding:20px 26px 26px;border-top:1px solid var(--rule)}
+.subtotal{display:flex;justify-content:space-between;font-size:16px;font-weight:500;margin-bottom:4px}
+.drawer-foot small{display:block;color:var(--mute);font-size:12.5px;margin-bottom:16px}
+.drawer-foot .btn{width:100%}
+.gift{display:flex;gap:10px;align-items:center;font-size:14px;margin-bottom:12px;cursor:pointer}
+.gift input{accent-color:var(--ink);width:16px;height:16px}
+.gift-msg{width:100%;border:1px solid var(--rule);background:var(--white);font:inherit;font-family:var(--serif);font-size:15px;padding:10px;margin-bottom:14px;resize:none}
+
+/* Fiche rapide */
+.modal{position:fixed;inset:0;z-index:80;display:grid;place-items:center;padding:24px;pointer-events:none}
+.modal-box{background:var(--paper);max-width:940px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;opacity:0;transition:opacity .25s;position:relative}
+.modal.on{pointer-events:auto}
+.modal.on .modal-box{opacity:1}
+.m-media{background:var(--white)}
+.m-media>img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.thumbs{display:flex;gap:6px;padding:6px}
+.thumbs button{width:58px;height:58px;opacity:.5}
+.thumbs button.on{opacity:1;outline:1px solid var(--ink)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.m-txt{padding:48px 42px}
+.m-txt h3{font-size:40px;margin:8px 0 10px}
+.m-txt .price{font-size:18px;display:block;margin-bottom:20px}
+.m-txt p{font-family:var(--serif);font-size:16px;line-height:1.65;margin-bottom:26px}
+.m-buy{display:flex;gap:10px}
+.m-buy .qty{margin:0}
+.m-buy .qty button{width:42px;height:48px}
+.m-buy .btn{flex:1}
+.m-txt ul{list-style:none;margin-top:26px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--mute)}
+.m-txt li{padding:10px 0;border-bottom:1px solid var(--rule)}
+.close{position:absolute;top:12px;right:16px;font-size:14px;font-weight:500;z-index:2}
+
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,100px);background:var(--ink);color:var(--paper);padding:13px 20px;font-size:14px;z-index:90;transition:transform .3s ease}
+.toast.on{transform:translate(-50%,0)}
+
+/* Responsive */
+@media (max-width:1024px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .carte{grid-template-columns:1fr 1fr}
+  .builder-grid,.story{grid-template-columns:1fr;gap:40px}
+  .sig-txt{padding:56px 40px}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:780px){
+  .wrap{padding:0 16px}
+  .topline .wrap span:last-child{display:none}
+  .nav{height:64px}
+  .menu{display:none}
+  .burger{display:block}
+  .tools .search{display:none}
+  .logo img{height:38px}
+  .hero{padding:28px 0 64px}
+  .hero-grid,.sec-head,.news{grid-template-columns:1fr;gap:28px}
+  .hero-fig{order:-1}
+  .hero-fig .inset{left:auto;right:12px;bottom:-28px;width:36%;border-width:6px}
+  .hero-txt{padding-top:20px}
+  .band-card{padding:30px 22px}
+  section.block{padding:72px 0}
+  .carte{grid-template-columns:1fr;gap:36px}
+  .grid{grid-template-columns:1fr 1fr;gap:34px 12px}
+  .card-info{flex-direction:column;gap:2px}
+  .signature{grid-template-columns:1fr}
+  .signature img{min-height:0;aspect-ratio:4/3}
+  .sig-txt{padding:40px 20px 48px}
+  .panel{padding:20px 16px}
+  .story-cols{columns:1}
+  .events{grid-template-columns:1fr;gap:48px}
+  .promises{grid-template-columns:1fr 1fr;margin-top:64px}
+  .foot{grid-template-columns:1fr}
+  .modal{padding:0;place-items:end center}
+  .modal-box{grid-template-columns:1fr;max-height:94vh}
+  .m-media>img{aspect-ratio:1}
+  .m-txt{padding:26px 18px 34px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topline"><div class="wrap"><span>Livraison en Belgique ou retrait</span><span>Commandes &amp; événements : <a href="tel:+32460947365">+32 460 94 73 65</a></span></div></div>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Maison A — accueil"><img src="https://maison-a.odoo.com/web/image/website/1/logo/Maison%20A?unique=d85dcd5" alt="Maison A — L'Intense"></a>
+    <nav class="menu" aria-label="Navigation principale">
+      <a href="#carte">La carte</a><a href="#boutique">Boutique</a><a href="#coffret">Coffrets</a><a href="#maison">La Maison</a><a href="#evenements">Événements</a>
+    </nav>
+    <div class="tools">
+      <button class="search">Rechercher</button>
+      <button id="openCart">Panier (<span id="cartCount">0</span>)</button>
+      <button class="burger" aria-label="Menu">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <h1>Goûtez la différence.</h1>
+      <p>Des pâtes à tartiner et des confitures faites de peu d'ingrédients, choisis avec soin. L'essentiel, et rien d'autre.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#boutique">Découvrir la boutique</a>
+        <a class="link" href="#coffret">Composer un coffret</a>
+      </div>
+    </div>
+    <figure class="hero-fig">
+      <img src="https://maison-a.odoo.com/web/image/1453-9fb51668/DSC01560%20-%20Copie.webp?access_token=fb91ad95-9b38-4993-8ac7-5d97e5c87e9e" alt="Cuillère en bois dans un pot de confiture Maison A">
+      <img class="inset" src="https://maison-a.odoo.com/web/image/product.product/2/image_1024/x?unique=6f325ab" alt="Pâte de pistache Maison A">
+      <figcaption class="note">Confiture Fraise Basilic Thaï &amp; Pâte de Pistache</figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="band">
+  <div class="wrap">
+    <div class="band-card">
+      <p>Authentique, raffiné, maison.</p>
+      <small>Chaque recette se compose de peu d'ingrédients, pour sublimer la saveur naturelle de chaque matière première.</small>
+    </div>
+  </div>
+</div>
+
+<section class="block" id="carte">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>La carte</h2>
+      <p>Toutes nos recettes, d'un seul coup d'œil. Survolez un nom pour voir le pot, cliquez pour le détail.</p>
+    </div>
+    <div class="carte" id="carteList"></div>
+  </div>
+</section>
+<img class="peek" id="peek" alt="">
+
+<section class="block" id="boutique" style="padding-top:0">
+  <div class="wrap">
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-f="all">Tout</button>
+      <button class="tab" data-f="chocolat">Pâtes à tartiner</button>
+      <button class="tab" data-f="fruits">Confitures</button>
+      <button class="tab" data-f="pures">Pâtes pures</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="signature">
+  <img src="https://maison-a.odoo.com/web/image/1015-2841d6a5/DSC01989.jpg" alt="Pâte à tartiner Noisette Maison A et noisettes" loading="lazy">
+  <div class="sig-txt">
+    <span class="note">La toute première recette de la Maison</span>
+    <h2>Pâte à tartiner Noisette</h2>
+    <p>C'est l'origine de notre aventure, celle qui a donné le ton : sincère, raffiné, intemporel. Sans poudre de cacao, elle rend hommage à la noisette dans toute sa pureté. Des noisettes soigneusement torréfiées, une texture fondante, un goût à la fois doux et intense.</p>
+    <div class="facts">
+      <div><b>33 %</b>de noisettes</div>
+      <div><b>0</b>poudre de cacao</div>
+      <div><b>N°1</b>de la Maison</div>
+    </div>
+    <div class="buy"><span class="price">8,00 €</span><button class="btn" data-add="noisette">Ajouter au panier</button><button class="link" data-view="noisette">Voir le détail</button></div>
+  </div>
+</section>
+
+<section class="block builder" id="coffret">
+  <div class="wrap builder-grid">
+    <div>
+      <h2>Le coffret, à composer.</h2>
+      <p class="note" style="margin-top:20px;font-size:17px">Un moyen simple d'offrir de l'élégance et du goût.</p>
+      <ol>
+        <li>Choisissez le contenant : 3 ou 6 pots.</li>
+        <li>Garnissez-le : pâtes à tartiner et confitures, librement.</li>
+        <li>Livraison ou retrait, au choix lors du paiement.</li>
+      </ol>
+    </div>
+    <div class="panel">
+      <div class="sizes">
+        <button class="size active" data-size="3">Coffret 3 pots</button>
+        <button class="size" data-size="6">Coffret 6 pots</button>
+      </div>
+      <div class="box" id="box"></div>
+      <ul class="picks" id="picks"></ul>
+      <div class="panel-foot">
+        <div><span class="note" id="boxHint">Encore 3 pots à choisir</span><b id="boxTotal">0,00 €</b></div>
+        <button class="btn" id="addBox" disabled>Ajouter le coffret</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="maison">
+  <div class="wrap story">
+    <blockquote>« Une vision épurée et élégante du raffinement, au service d'un plaisir sincère et intemporel. »</blockquote>
+    <div>
+      <div class="story-cols">
+        <p>Animés par la passion du goût et de l'authenticité, nous créons des produits où simplicité rime avec excellence.</p>
+        <p>Chaque recette se compose de peu d'ingrédients, choisis avec soin. Seulement l'essentiel, pour sublimer la saveur naturelle de chaque matière première.</p>
+        <p>Nos associations, de la fraise au basilic thaï à la pêche relevée d'eau de rose, allient tradition et audace.</p>
+      </div>
+      <div class="story-img">
+        <img src="https://maison-a.odoo.com/web/image/1712-3b93cf23/DSC01602.jpg" alt="Trois pots de confiture Fraise Basilic Thaï" loading="lazy">
+        <img src="https://maison-a.odoo.com/web/image/product.image/9/image_1024/DSC01850.webp?unique=f0d4186" alt="Confiture Pêche Eau de Rose" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="evenements" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Événements &amp; cadeaux</h2>
+      <p>Mariages, cadeaux d'affaires, fêtes de fin d'année : des pots en quantité, présentés avec soin.</p>
+    </div>
+    <div class="events">
+      <div class="event"><img src="https://maison-a.odoo.com/web/image/1704-d6919de3/Gemini_Generated_Image_8or1te8or1te8or1.webp" alt="Pots de pâte de pistache empilés" loading="lazy"><h3>Mariages &amp; fêtes</h3><p>Un cadeau d'invité qu'on emporte et qu'on goûte vraiment.</p><a class="link" href="tel:+32460947365">Demander un devis</a></div>
+      <div class="event"><img src="https://maison-a.odoo.com/web/image/1706-d07e9105/Gemini_Generated_Image_b5sv9jb5sv9jb5sv%20%281%29.webp" alt="Assortiment de pots Maison A" loading="lazy"><h3>Cadeaux d'entreprise</h3><p>Remerciez clients et équipes avec un coffret à vos couleurs.</p><a class="link" href="tel:+32460947365">Nous contacter</a></div>
+    </div>
+    <div class="promises">
+      <div><b>Recettes courtes</b>Seulement l'essentiel.</div>
+      <div><b>Livraison ou retrait</b>Au choix lors du paiement.</div>
+      <div><b>Prêt à offrir</b>Coffrets à composer.</div>
+      <div><b>Paiement sécurisé</b>Bancontact, cartes, Apple Pay.</div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="news">
+    <h2>Les nouveautés, en premier.</h2>
+    <div>
+      <p class="note" style="margin-bottom:18px;font-size:16px">Éditions limitées et nouvelles recettes. Un e-mail par mois, pas plus.</p>
+      <form id="newsForm"><input type="email" required placeholder="Votre adresse e-mail" aria-label="Adresse e-mail"><button>S'inscrire</button></form>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><img src="https://maison-a.odoo.com/web/image/website/1/logo/Maison%20A?unique=d85dcd5" alt="Maison A"><p class="note">Pâtes à tartiner &amp; confitures.</p></div>
+      <div><h4>Boutique</h4><ul><li><a href="#boutique">Pâtes à tartiner</a></li><li><a href="#boutique">Confitures</a></li><li><a href="#coffret">Coffrets</a></li><li><a href="#evenements">Événements</a></li></ul></div>
+      <div><h4>Informations</h4><ul><li><a href="#maison">La Maison</a></li><li><a href="#">Livraison &amp; retrait</a></li><li><a href="#">Conditions générales de vente</a></li><li><a href="#">Politique de confidentialité</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+32460947365">+32 460 94 73 65</a></li><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Maison A</span><span>Bancontact · Visa · Mastercard · Apple Pay</span></div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Panier">
+  <div class="drawer-head"><h3>Panier</h3><button id="closeCart">Fermer</button></div>
+  <div class="ship" id="ship"></div>
+  <div class="lines" id="lines"></div>
+  <div class="drawer-foot">
+    <label class="gift"><input type="checkbox" id="giftOn"> Emballage cadeau avec un petit mot</label>
+    <textarea class="gift-msg" id="giftMsg" rows="2" maxlength="200" placeholder="Votre message (200 caractères max.)" hidden></textarea>
+    <div class="subtotal"><span>Sous-total</span><span id="subtotal">0,00 €</span></div>
+    <small>TVA incluse. Livraison ou retrait à l'étape suivante.</small>
+    <button class="btn" id="checkout">Passer commande</button>
+  </div>
+</aside>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true"><div class="modal-box" id="modalBox"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const IMG = p => p.startsWith("data:") ? p : "https://maison-a.odoo.com/web/image/" + p;
+// Étiquette dessinée pour les produits sans photo sur Odoo (en attendant le shooting).
+const LABEL = (name, bg, band) => "data:image/svg+xml," + encodeURIComponent(
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750"><rect width="600" height="750" fill="${bg}"/>
+  <rect x="160" y="200" width="280" height="340" fill="#FBF8F2"/><rect x="180" y="160" width="240" height="54" fill="${band}"/>
+  <text x="300" y="300" text-anchor="middle" font-family="Georgia" font-style="italic" font-size="26" fill="#6B3E0B">Maison A</text>
+  <line x1="240" y1="322" x2="360" y2="322" stroke="#1D1A16" stroke-opacity=".3"/>
+  ${name.map((l,i)=>`<text x="300" y="${372+i*36}" text-anchor="middle" font-family="Georgia" font-size="28" fill="#1D1A16">${l}</text>`).join("")}</svg>`);
+// Catalogue repris du site Odoo (prix TTC). Les descriptions marquées « proposition » sont à valider par le client.
+const PRODUCTS = [
+  {id:"noisette", pair:"Brioche tiède, crêpes, ou à la cuillère.", cat:"chocolat", tag:"N°1", name:"Pâte à Tartiner Noisette", sub:"33 % noisettes, sans cacao", price:8.00,
+   imgs:["product.product/5/image_1024/x?unique=2031d04","product.image/1/image_1024/DSC01977.webp?unique=c672596","product.image/2/image_1024/DSC01989.webp?unique=0560067","product.image/3/image_1024/DSC01985.webp?unique=108d5af"],
+   desc:"Première création de Maison A, cette pâte à tartiner à la noisette (33 %) est l'origine de notre aventure. Sans poudre de cacao, elle rend hommage à la noisette dans toute sa pureté : texture fondante, goût pur, à la fois doux et intense."},
+  {id:"pistache", pair:"Brioche, fraises fraîches, glace vanille.", cat:"chocolat", name:"Pâte de Pistache", sub:"Onctueuse et délicate", price:9.00,
+   imgs:["product.product/2/image_1024/x?unique=6f325ab"],
+   desc:"Une texture onctueuse, un parfum délicat. Notre pâte à la pistache révèle la finesse de ce fruit noble. Subtilement sucrée, elle mêle douceur et intensité. Parfaite sur une brioche tiède ou simplement à la cuillère."},
+  {id:"pistache-intense", pair:"Croissant, financier, yaourt grec.", cat:"chocolat", tag:"Édition limitée", name:"Pistache Intense", sub:"Pour les inconditionnels", price:13.50,
+   imgs:["product.product/11/image_1024/x?unique=9b869e5"],
+   desc:"La pistache dans sa version la plus profonde, pour celles et ceux qui ne jurent que par elle. (Proposition, à valider.)"},
+  {id:"choco-cacahuete", pair:"Banane, pancakes, pain de campagne grillé.", cat:"chocolat", name:"Chocolat Cacahuète", sub:"Gourmand, réconfortant", price:6.50,
+   imgs:[LABEL(["Chocolat","Cacahuète"],"#E7D9C7","#6B4A2E")],
+   desc:"La rondeur du chocolat rencontre le goût toasté de la cacahuète. Un classique réconfortant, revisité avec simplicité. (Proposition, à valider.)"},
+  {id:"fraise", pair:"Fromage blanc, pavlova, scones.", cat:"fruits", tag:"Première confiture", name:"Fraise Basilic Thaï", sub:"Fraîche, surprenante", price:6.50,
+   imgs:["product.product/4/image_1024/x?unique=7037c16","product.image/6/image_1024/DSC01562.webp?unique=04b685c","product.image/7/image_1024/DSC01946.webp?unique=1da0e04","product.image/8/image_1024/DSC01631.webp?unique=5a8d6ed"],
+   desc:"Première confiture de Maison A. La douceur intemporelle de la fraise et la fraîcheur aromatique, subtilement épicée, du basilic thaï. Une alliance délicate et surprenante, pour un dessert ou un petit-déjeuner d'exception."},
+  {id:"peche", pair:"Panna cotta, yaourt, tarte sablée.", cat:"fruits", name:"Pêche Eau de Rose", sub:"Florale, lumineuse", price:7.50,
+   imgs:["product.product/6/image_1024/x?unique=4a61f70","product.image/9/image_1024/DSC01850.webp?unique=f0d4186","product.image/10/image_1024/DSC01860.webp?unique=4c29449","product.image/11/image_1024/DSC01868.webp?unique=4a61f70"],
+   desc:"La pêche gorgée de soleil, relevée d'une touche d'eau de rose. Une confiture florale et lumineuse, tout en délicatesse. (Proposition, à valider.)"},
+  {id:"figue", pair:"Fromage de chèvre, comté affiné, foie gras.", cat:"fruits", name:"Figue & Fleur d'Oranger", sub:"Ficus Flanders", price:6.20,
+   imgs:[LABEL(["Figue &amp;","Fleur d'Oranger"],"#EDCDC6","#8A4B5C")],
+   desc:"La figue fondante, parfumée d'un souffle de fleur d'oranger. À marier avec un fromage affiné ou une tartine beurrée. (Proposition, à valider.)"},
+  {id:"cacahuete", pair:"Porridge, smoothie, sauce satay.", cat:"pures", name:"Beurre de Cacahuète Blanche", sub:"La cacahuète, simplement", price:6.00,
+   imgs:[LABEL(["Beurre de","Cacahuète"],"#DCE0C4","#4F5A2C")],
+   desc:"Une pâte pure, sans compromis : la cacahuète, simplement. Pour les tartines, les smoothies et la pâtisserie. (Proposition, à valider.)"}
+];
+const P = Object.fromEntries(PRODUCTS.map(p=>[p.id,p]));
+const eur = n => n.toFixed(2).replace(".",",") + " €";
+const FREE_SHIP = 40; // seuil de livraison offerte : à définir avec le client
+const $ = s => document.querySelector(s);
+
+// La carte
+const GROUPS = [["chocolat","Pâtes à tartiner","Noisette, pistache, chocolat"],["fruits","Confitures","Fruits et associations audacieuses"],["pures","Pâtes pures","Un seul ingrédient"]];
+$("#carteList").innerHTML = GROUPS.map(([c,t,n])=>`<div><h3>${t}</h3><span class="note">${n}</span><ul>${
+  PRODUCTS.filter(p=>p.cat===c).map(p=>`<li><button data-view="${p.id}" data-peek="${p.id}"><span>${p.name}</span><span>${eur(p.price)}</span></button></li>`).join("")}</ul></div>`).join("");
+const peek = $("#peek");
+if (matchMedia("(pointer:fine)").matches) {
+  $("#carteList").addEventListener("mousemove", e=>{
+    const b = e.target.closest("[data-peek]");
+    if (!b) return peek.classList.remove("on");
+    const src = IMG(P[b.dataset.peek].imgs[0]);
+    if (peek.getAttribute("src") !== src) peek.src = src;
+    peek.style.left = (e.clientX + 24) + "px"; peek.style.top = (e.clientY - 110) + "px";
+    peek.classList.add("on");
+  });
+  $("#carteList").addEventListener("mouseleave", ()=>peek.classList.remove("on"));
+}
+
+// Boutique
+$("#grid").innerHTML = PRODUCTS.map(p=>`
+  <article class="card" data-cat="${p.cat}">
+    <div class="card-media" data-view="${p.id}">
+      ${p.tag?`<span class="tag">${p.tag}</span>`:""}
+      <img src="${IMG(p.imgs[0])}" alt="${p.name}" loading="lazy">
+      ${p.imgs[1]?`<img class="alt" src="${IMG(p.imgs[1])}" alt="" loading="lazy">`:""}
+    </div>
+    <div class="card-info"><div><h3>${p.name}</h3><small>${p.sub}</small></div><span class="price">${eur(p.price)}</span></div>
+    <button class="link add" data-add="${p.id}">Ajouter au panier</button>
+  </article>`).join("");
+document.querySelectorAll(".tab").forEach(t=>t.onclick=()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("active",x===t));
+  document.querySelectorAll(".card").forEach(c=>c.classList.toggle("hide",t.dataset.f!=="all"&&c.dataset.cat!==t.dataset.f));
+});
+
+// Panier
+let cart = [];
+function add(item){
+  const ex = cart.find(l=>l.key===item.key);
+  ex ? ex.qty += item.qty : cart.push(item);
+  render(); toast(`${item.name} — ajouté au panier`);
+}
+function render(){
+  const n = cart.reduce((s,l)=>s+l.qty,0), total = cart.reduce((s,l)=>s+l.qty*l.price,0);
+  $("#cartCount").textContent = n;
+  $("#subtotal").textContent = eur(total);
+  const left = FREE_SHIP-total;
+  $("#ship").innerHTML = (left>0?`Encore ${eur(left)} pour la livraison offerte.`:`La livraison vous est offerte.`)+`<div class="bar"><i style="width:${Math.min(100,total/FREE_SHIP*100)}%"></i></div>`;
+  $("#lines").innerHTML = cart.length ? cart.map((l,i)=>`
+    <div class="line"><img src="${l.img}" alt=""><div><h5>${l.name}</h5><small>${l.note||eur(l.price)}</small><br>
+      <div class="qty"><button data-q="${i}" data-d="-1" aria-label="Retirer">−</button><span>${l.qty}</span><button data-q="${i}" data-d="1" aria-label="Ajouter">+</button></div></div>
+      <span>${eur(l.qty*l.price)}</span></div>`).join("")
+    : `<div class="empty"><b>Votre panier est vide.</b>Laissez parler vos envies.</div>`;
+  $("#checkout").disabled = !cart.length;
+}
+$("#lines").onclick = e=>{
+  const b = e.target.closest("[data-q]");
+  if (b) { const l = cart[b.dataset.q]; l.qty += +b.dataset.d; if (l.qty<1) cart.splice(b.dataset.q,1); render(); }
+};
+const addProduct = (id,qty=1)=>{const p=P[id];add({key:id,name:p.name,price:p.price,qty,img:IMG(p.imgs[0])})};
+function openCart(){$("#drawer").classList.add("on");$("#overlay").classList.add("on")}
+function closeAll(){$("#drawer").classList.remove("on");$("#overlay").classList.remove("on");$("#modal").classList.remove("on")}
+$("#openCart").onclick = openCart; $("#closeCart").onclick = closeAll; $("#overlay").onclick = closeAll;
+document.addEventListener("keydown",e=>e.key==="Escape"&&closeAll());
+$("#giftOn").onchange = e=>{$("#giftMsg").hidden = !e.target.checked};
+$("#checkout").onclick = ()=>toast("Ici : paiement Shopify (Bancontact, carte, Apple Pay)");
+
+// Fiche rapide
+function view(id){
+  const p = P[id]; let q = 1;
+  peek.classList.remove("on");
+  $("#modalBox").innerHTML = `<button class="close">Fermer</button>
+    <div class="m-media"><img id="mImg" src="${IMG(p.imgs[0])}" alt="${p.name}">
+      ${p.imgs.length>1?`<div class="thumbs">${p.imgs.map((s,i)=>`<button class="${i?"":"on"}" data-src="${IMG(s)}"><img src="${IMG(s)}" alt=""></button>`).join("")}</div>`:""}</div>
+    <div class="m-txt"><span class="note">${p.tag||p.sub}</span><h3>${p.name}</h3><span class="price">${eur(p.price)}</span><p>${p.desc}</p>
+      <div class="m-buy"><div class="qty"><button id="mm">−</button><span id="mq">1</span><button id="mp">+</button></div><button class="btn" id="madd">Ajouter au panier</button></div>
+      <ul><li><b style="color:var(--ink);font-weight:500">Accords</b> — ${p.pair}</li><li>Livraison en Belgique ou retrait</li><li>Paiement sécurisé</li><li>Disponible en coffret</li></ul></div>`;
+  $("#modal").classList.add("on"); $("#overlay").classList.add("on");
+  $("#modalBox .close").onclick = closeAll;
+  $("#mm").onclick = ()=>{q=Math.max(1,q-1);$("#mq").textContent=q};
+  $("#mp").onclick = ()=>{q++;$("#mq").textContent=q};
+  $("#madd").onclick = ()=>{addProduct(id,q);$("#modal").classList.remove("on");openCart()};
+  document.querySelectorAll(".thumbs button").forEach(b=>b.onclick=()=>{$("#mImg").src=b.dataset.src;document.querySelectorAll(".thumbs button").forEach(x=>x.classList.toggle("on",x===b))});
+}
+$("#modal").onclick = e=>{if(e.target.id==="modal")closeAll()};
+document.addEventListener("click",e=>{
+  const a = e.target.closest("[data-add]"); if (a) { addProduct(a.dataset.add); return; }
+  const v = e.target.closest("[data-view]"); if (v) view(v.dataset.view);
+});
+
+// Coffret
+let size = 3, box = [];
+function renderBox(){
+  $("#box").style.gridTemplateColumns = `repeat(${size},1fr)`;
+  $("#box").innerHTML = Array.from({length:size},(_,i)=>box[i]
+    ? `<button class="slot filled" data-rm="${i}" aria-label="Retirer ${P[box[i]].name}"><img src="${IMG(P[box[i]].imgs[0])}" alt=""></button>`
+    : `<div class="slot">pot ${i+1}</div>`).join("");
+  const full = box.length >= size;
+  $("#picks").innerHTML = PRODUCTS.map(p=>`<li><img src="${IMG(p.imgs[0])}" alt=""><span>${p.name}</span><em>${eur(p.price)}</em><button data-pick="${p.id}" ${full?"disabled":""} aria-label="Ajouter ${p.name} au coffret">+</button></li>`).join("");
+  $("#boxTotal").textContent = eur(box.reduce((s,id)=>s+P[id].price,0));
+  $("#boxHint").textContent = full ? "Coffret complet." : `Encore ${size-box.length} pot${size-box.length>1?"s":""} à choisir`;
+  $("#addBox").disabled = !full;
+}
+document.querySelectorAll(".size").forEach(b=>b.onclick=()=>{size=+b.dataset.size;box=box.slice(0,size);document.querySelectorAll(".size").forEach(x=>x.classList.toggle("active",x===b));renderBox()});
+$("#picks").onclick = e=>{const b=e.target.closest("[data-pick]");if(b&&box.length<size){box.push(b.dataset.pick);renderBox()}};
+$("#box").onclick = e=>{const b=e.target.closest("[data-rm]");if(b){box.splice(b.dataset.rm,1);renderBox()}};
+$("#addBox").onclick = ()=>{
+  add({key:"box-"+Date.now(),name:`Coffret ${size} pots`,price:box.reduce((s,id)=>s+P[id].price,0),qty:1,img:IMG(P[box[0]].imgs[0]),note:box.map(id=>P[id].name).join(", ")});
+  box = []; renderBox(); openCart();
+};
+
+let tt; function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("on");clearTimeout(tt);tt=setTimeout(()=>t.classList.remove("on"),2400)}
+$("#newsForm").onsubmit = e=>{e.preventDefault();e.target.reset();toast("Merci, à très vite.")};
+render(); renderBox();
+</script>
+</body>
+</html>
